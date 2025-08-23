@@ -42,7 +42,7 @@ Every Alteriom project includes enterprise-grade security by default:
 For questions, support, or collaboration opportunities:
 
 - **General inquiries**: Open an issue in the relevant repository
-- **Security reports**: <security@alteriom.org>
+- **Security reports**: <security@alteriom.ca>
 - **Discussions**: Join our GitHub Discussions
 
 ---
