@@ -1,556 +1,224 @@
-# 🚀 Alteriom Enterprise IoT Platform
+# Alteriom Public Overview
 
-<div align="center">
+> Baseline public information for Alteriom. This file intentionally excludes any private or internal repositories, tools, or unpublished metrics.
 
-![Alteriom Logo](https://via.placeholder.com/300x120/1e3a8a/ffffff?text=ALTERIOM)
+<!-- Core Public Repository Badges -->
+![mqtt-schema license](https://img.shields.io/github/license/Alteriom/alteriom-mqtt-schema)
+![mqtt-schema issues](https://img.shields.io/github/issues/Alteriom/alteriom-mqtt-schema)
+![mqtt-schema last commit](https://img.shields.io/github/last-commit/Alteriom/alteriom-mqtt-schema)
+![mqtt-schema top language](https://img.shields.io/github/languages/top/Alteriom/alteriom-mqtt-schema)
 
-**Next-Generation IoT Platform for Enterprise Solutions**
+![metadata-manager license](https://img.shields.io/github/license/Alteriom/repository-metadata-manager)
+![metadata-manager issues](https://img.shields.io/github/issues/Alteriom/repository-metadata-manager)
+![metadata-manager last commit](https://img.shields.io/github/last-commit/Alteriom/repository-metadata-manager)
+![metadata-manager top language](https://img.shields.io/github/languages/top/Alteriom/repository-metadata-manager)
 
-[![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-success?style=for-the-badge)](https://alteriom.com)
-[![Multi-Tenant](https://img.shields.io/badge/Multi--Tenant-Architecture-blue?style=for-the-badge)](https://alteriom.com)
-[![Real-Time](https://img.shields.io/badge/Real--Time-Analytics-orange?style=for-the-badge)](https://alteriom.com)
-[![Secure](https://img.shields.io/badge/Enterprise-Security-red?style=for-the-badge)](https://alteriom.com)
+![docker-images license](https://img.shields.io/github/license/Alteriom/alteriom-docker-images)
+![docker-images issues](https://img.shields.io/github/issues/Alteriom/alteriom-docker-images)
+![docker-images last commit](https://img.shields.io/github/last-commit/Alteriom/alteriom-docker-images)
+![docker-images top language](https://img.shields.io/github/languages/top/Alteriom/alteriom-docker-images)
 
-</div>
+![org-config last commit](https://img.shields.io/github/last-commit/Alteriom/.github)
+![org-config repo size](https://img.shields.io/github/repo-size/Alteriom/.github)
 
-## 🌟 Enterprise Overview
+<!-- Fork / External references (read-only) -->
+![painlessMesh fork](https://img.shields.io/badge/fork-painlessMesh-blue)
+![library-registry external](https://img.shields.io/badge/external-library--registry-lightgrey)
+![EByte LoRa library external](https://img.shields.io/badge/external-EByte_LoRa_E220-orange)
 
-Alteriom is a comprehensive, enterprise-grade IoT platform designed to manage, monitor, and optimize IoT device fleets at scale. Built with modern cloud-native architecture, Alteriom provides organizations with the tools they need to transform their operations through intelligent IoT solutions.
+## 📌 Mission (Public Scope)
 
-### 🎯 Key Value Propositions
+Alteriom publishes open source resources focused on:
 
-- **🏢 Enterprise Scale**: Manage millions of devices across global deployments
-- **🔒 Security First**: Bank-grade security with end-to-end encryption
-- **⚡ Real-Time**: Sub-second data processing and response times
-- **🎨 Customizable**: White-label solutions with full branding control
-- **📊 Intelligent**: AI-powered analytics and predictive maintenance
-- **💼 Multi-Tenant**: Secure isolation for multiple organizations
+* Automated documentation quality, organization, and continuous improvement
+* Repository metadata consistency & compliance patterns
+* MQTT topic schema standardization & type-safe integration
+* Documentation conversion & normalization utilities
+* Issue / template automation and reproducible development practices
 
----
+## 📂 Public Repositories
 
-## 🏗️ Platform Architecture
+Only repositories that are publicly accessible are listed. Forks and upstream third‑party references are noted.
 
-### 🔧 Core Components
+| Repository | Type | Focus | Key Capabilities |
+|-----------|------|-------|------------------|
+| `alteriom-mqtt-schema` | Alteriom (public) | MQTT schemas & TS types | Versioned MQTT topic schemas, TypeScript validation helpers, integration utilities |
+| `repository-metadata-manager` | Alteriom (public) | Repo compliance & health | Topic/tag management, metadata normalization, automation hooks |
+| `alteriom-docker-images` | Alteriom (public) | Documentation conversion tooling | Word→Markdown conversion, metadata management, validation scripts |
+| `.github` | Alteriom (public) | Org-wide GitHub configuration | Profile README, shared issue templates, shared guidelines |
+| `painlessMesh` | Third-party fork | Mesh networking library | Reference fork of release 1.5.6 (no Alteriom modifications) |
+| `library-registry` | External upstream | Arduino Library Manager registry | Read-only upstream registry reference |
+| `EByte_LoRa_E220_Series_Library` | External upstream | LoRa device library | Multi-platform LoRa E220 LLCC68 reference implementation |
 
-```mermaid
-graph TB
-    subgraph "Edge Layer"
-        D[IoT Devices] --> F[Firmware Layer]
-        F --> G[MQTT Gateway]
-    end
+Internal repositories are intentionally not referenced.
 
-    subgraph "Communication Layer"
-        G --> M[MQTT Broker]
-        M --> P[Message Pipeline]
-    end
+## 🔧 Public Tooling Highlights
 
-    subgraph "Platform Layer"
-        P --> AI[AI Agent Engine]
-        P --> DB[(Database)]
-        AI --> W[Web Interface]
-        DB --> W
-    end
+### Metadata & Compliance
 
-    subgraph "Application Layer"
-        W --> DA[Dashboard & Analytics]
-        W --> DM[Device Management]
-        W --> FM[Firmware Management]
-        W --> AM[Admin Panel]
-    end
-```
+* Repository metadata normalization (topics/tags, descriptions) via `repository-metadata-manager`
+* Consistent naming & tagging guidance (see `docs/README.md`)
 
-### 🌐 Technology Stack
+### Schemas & Validation
 
-| Layer              | Technology                        | Purpose                   |
-| ------------------ | --------------------------------- | ------------------------- |
-| **Frontend**       | React, TypeScript, Next.js        | Modern web interface      |
-| **Backend**        | Node.js, Express, FastAPI         | API and business logic    |
-| **AI/ML**          | TensorFlow, PyTorch, Scikit-learn | Analytics and predictions |
-| **Database**       | PostgreSQL, Redis, TimescaleDB    | Data persistence          |
-| **Messaging**      | MQTT, Apache Kafka                | Real-time communication   |
-| **Infrastructure** | Docker, Kubernetes, AWS/Azure     | Cloud deployment          |
+* MQTT topic & payload schema versioning (`alteriom-mqtt-schema`)
+* TypeScript helpers for compile-time integration safety
 
----
+### Documentation Conversion
 
-## 🚀 Key Features
+* Word / binary document to Markdown conversion (pandoc scripts in `alteriom-docker-images`)
+* Metadata enrichment & standardized front matter
 
-### 📱 Device Management
+### Configuration & Org Assets
 
-- **Automated Discovery**: Zero-touch device onboarding
-- **Bulk Operations**: Manage thousands of devices simultaneously
-- **Configuration Management**: Centralized device configuration
-- **Health Monitoring**: Real-time device health and diagnostics
+* Shared issue templates and guidelines in `.github`
+* Badges maintained for public visibility only
 
-### 🔄 Firmware Management
+### External References
 
-- **OTA Updates**: Secure over-the-air firmware updates
-- **Rollback Capability**: Instant rollback for failed updates
-- **Staged Deployments**: Canary and blue-green deployments
-- **Version Control**: Complete firmware lifecycle management
+* Forked mesh networking library (`painlessMesh`) retained for evaluation
+* Upstream registries and device libraries (`library-registry`, `EByte_LoRa_E220_Series_Library`)
 
-### 📊 Analytics & Insights
+## 📘 Documentation Standards
 
-- **Real-Time Dashboards**: Live monitoring and metrics
-- **Predictive Analytics**: AI-powered failure prediction
-- **Custom Reports**: Automated report generation
-- **Pattern Recognition**: Anomaly detection and trending
+Common themes across repositories:
 
-### 🔐 Security & Compliance
+* Kebab-case markdown filenames
+* Factual sections only (no performance claims)
+* Badges restricted to verifiable public data
+* Clear separation of public vs internal scope
 
-- **End-to-End Encryption**: TLS 1.3 and AES-256 encryption
-- **Certificate Management**: Automated PKI infrastructure
-- **Access Control**: Role-based permissions and multi-factor auth
-- **Compliance**: SOC 2, GDPR, HIPAA ready
+## 🚀 Getting Started (Public Repos)
 
-### 🏢 Enterprise Features
-
-- **Multi-Tenancy**: Complete tenant isolation
-- **White Labeling**: Custom branding and domains
-- **API Management**: RESTful APIs with rate limiting
-- **Integration**: Enterprise system integration capabilities
-
----
-
-## 💼 Use Cases & Industries
-
-### 🏭 Manufacturing
-
-- **Smart Factory**: Real-time production monitoring
-- **Predictive Maintenance**: Reduce downtime by 40%
-- **Quality Control**: Automated quality assurance
-- **Asset Tracking**: Complete visibility of equipment
-
-### 🌾 Agriculture
-
-- **Precision Farming**: Soil and crop monitoring
-- **Irrigation Management**: Automated water systems
-- **Livestock Monitoring**: Animal health tracking
-- **Weather Integration**: Climate-based decisions
-
-### 🏙️ Smart Cities
-
-- **Traffic Management**: Intelligent traffic flow
-- **Environmental Monitoring**: Air quality tracking
-- **Energy Management**: Smart grid optimization
-- **Public Safety**: Emergency response systems
-
-### 🏥 Healthcare
-
-- **Patient Monitoring**: Remote health tracking
-- **Asset Management**: Medical equipment tracking
-- **Environmental Control**: Clean room monitoring
-- **Compliance**: Regulatory requirement adherence
-
-### 🏠 Smart Buildings
-
-- **HVAC Optimization**: Energy-efficient climate control
-- **Security Systems**: Access control and monitoring
-- **Space Utilization**: Occupancy analytics
-- **Maintenance**: Predictive building maintenance
-
----
-
-## 📈 Performance Metrics
-
-### ⚡ Platform Performance
-
-| Metric          | Value            | Description                   |
-| --------------- | ---------------- | ----------------------------- |
-| **Throughput**  | 1M+ messages/sec | Real-time data processing     |
-| **Latency**     | <50ms            | End-to-end response time      |
-| **Uptime**      | 99.99%           | Enterprise SLA guarantee      |
-| **Scalability** | 10M+ devices     | Horizontal scaling capability |
-
-### 🎯 Business Impact
-
-- **Cost Reduction**: Up to 30% operational cost savings
-- **Efficiency Gain**: 40% improvement in operational efficiency
-- **Downtime Reduction**: 60% reduction in unplanned downtime
-- **ROI**: Average 250% ROI within 18 months
-
----
-
-## 🔧 Getting Started
-
-### 🚀 Quick Deployment
-
-#### 1. Prerequisites
+Clone only the public repositories relevant to your work:
 
 ```bash
-# Docker and Docker Compose
-docker --version
-docker-compose --version
-
-# Node.js and npm
-node --version
-npm --version
+git clone https://github.com/Alteriom/alteriom-mqtt-schema.git
+git clone https://github.com/Alteriom/repository-metadata-manager.git
+git clone https://github.com/Alteriom/alteriom-docker-images.git
+git clone https://github.com/Alteriom/.github.git
+git clone https://github.com/Alteriom/painlessMesh.git            # fork
+git clone https://github.com/arduino/library-registry.git         # upstream reference
+git clone https://github.com/xreef/EByte_LoRa_E220_Series_Library.git
 ```
 
-#### 2. Clone and Setup
+### MQTT Schema (`alteriom-mqtt-schema`)
 
 ```bash
-# Clone all repositories
-git clone https://github.com/Alteriom/alteriom-ai-agent.git
-git clone https://github.com/Alteriom/alteriom-firmware.git
-git clone https://github.com/Alteriom/alteriom-website.git
-git clone https://github.com/Alteriom/alteriom-IoT-server.git
-
-# Start the platform
-cd alteriom-ai-agent
-docker-compose up -d
+cd alteriom-mqtt-schema
+npm install
+npm test   # run validation helper tests (if present)
 ```
 
-#### 3. Access Platform
+Use exported TypeScript types for integrating MQTT payload validation.
 
-- **Web Interface**: <http://localhost:3000>
-- **API Documentation**: <http://localhost:3000/api/docs>
-- **Admin Panel**: <http://localhost:3000/admin>
-- **Monitoring**: <http://localhost:3000/monitoring>
-
-### 📋 Configuration
-
-#### Environment Variables
+### Repository Metadata Manager (`repository-metadata-manager`)
 
 ```bash
-# Database Configuration
-DATABASE_URL=postgresql://user:password@localhost:5432/alteriom
-REDIS_URL=redis://localhost:6379
-
-# MQTT Broker
-MQTT_BROKER_URL=mqtt://localhost:1883
-MQTT_USERNAME=alteriom_user
-MQTT_PASSWORD=secure_password
-
-# Security
-JWT_SECRET=your-super-secure-jwt-secret
-ENCRYPTION_KEY=your-256-bit-encryption-key
-
-# External Services
-AWS_ACCESS_KEY_ID=your-aws-key
-AWS_SECRET_ACCESS_KEY=your-aws-secret
-SENDGRID_API_KEY=your-sendgrid-key
+cd repository-metadata-manager
+npm install
+npm run build
+npm test   # run compliance/metadata tests (if available)
 ```
 
----
+Automates consistent topics, tags, and naming patterns across repositories.
 
-## 🏢 Enterprise Deployment
+### Documentation Conversion (`alteriom-docker-images`)
 
-### ☁️ Cloud Deployment Options
-
-#### AWS Infrastructure
-
-```yaml
-# terraform/aws/main.tf
-resource "aws_ecs_cluster" "alteriom" {
-name = "alteriom-production"
-
-setting {
-name  = "containerInsights"
-value = "enabled"
-}
-}
-
-resource "aws_rds_cluster" "alteriom_db" {
-cluster_identifier = "alteriom-production"
-engine            = "aurora-postgresql"
-master_username   = "alteriom_admin"
-manage_master_user_password = true
-}
+```bash
+cd alteriom-docker-images
+./scripts/convert.sh path/to/input.docx output.md   # example (adjust per repo docs)
 ```
 
-#### Kubernetes Deployment
+Refer to repository scripts for pandoc invocation & metadata normalization.
 
-```yaml
-# k8s/production/deployment.yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-    name: alteriom-platform
-spec:
-    replicas: 3
-    selector:
-        matchLabels:
-            app: alteriom-platform
-    template:
-        metadata:
-            labels:
-                app: alteriom-platform
-        spec:
-            containers:
-                - name: alteriom-api
-                  image: alteriom/platform:latest
-                  resources:
-                      requests:
-                          memory: '1Gi'
-                          cpu: '500m'
-                      limits:
-                          memory: '2Gi'
-                          cpu: '1000m'
+### Mesh Networking (`painlessMesh` fork)
+
+```bash
+cd painlessMesh
+platformio run
 ```
 
-### 🔒 Security Configuration
+Used as reference for internal mesh-related development (no modifications beyond fork metadata).
 
-#### SSL/TLS Setup
+### LoRa E220 Device Library (external)
 
-```nginx
-# nginx/ssl.conf
-server {
-    listen 443 ssl http2;
-    server_name your-domain.com;
-
-    ssl_certificate /etc/ssl/certs/alteriom.crt;
-    ssl_certificate_key /etc/ssl/private/alteriom.key;
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512;
-
-    location / {
-        proxy_pass http://alteriom-backend;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
-}
+```bash
+cd EByte_LoRa_E220_Series_Library
+platformio run
 ```
 
----
+Integrate with ESP32 / ESP8266 builds requiring LoRa E220 support.
 
-## 📊 Monitoring & Observability
+## 🧪 Testing & Validation (Public Scope)
 
-### 📈 Metrics Dashboard
+* TypeScript schema tests (`alteriom-mqtt-schema`)
+* Metadata normalization tests / build validation (`repository-metadata-manager`)
+* Conversion script smoke tests (if present) in `alteriom-docker-images`
 
-#### Key Performance Indicators
+## 🔐 Security (Public Scope)
 
-```typescript
-interface PlatformMetrics {
-    devices: {
-        total: number;
-        online: number;
-        health_score: number;
-    };
-    messages: {
-        throughput: number;
-        latency_p95: number;
-        error_rate: number;
-    };
-    users: {
-        active_sessions: number;
-        api_requests: number;
-        response_time: number;
-    };
-}
-```
+* No formal audits or certifications published – do not imply them.
+* Recommended: security disclosures via SECURITY.md process.
 
-#### Alerting Rules
+## 🛠 Contribution Guidelines
 
-```yaml
-# prometheus/alerts.yml
-groups:
-    - name: alteriom.rules
-      rules:
-          - alert: HighErrorRate
-            expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
-            for: 5m
-            annotations:
-                summary: 'High error rate detected'
+Public contributions should:
 
-          - alert: DeviceOffline
-            expr: device_online_status == 0
-            for: 2m
-            annotations:
-                summary: 'Device {{ $labels.device_id }} is offline'
-```
+1. Target only repositories listed in the public table.
+2. Avoid referencing internal systems or private code.
+3. Include tests for schema or metadata changes.
+4. Update documentation front matter consistently.
+5. Follow behavior standards (see CODE_OF_CONDUCT.md).
 
----
+## 📊 Improvement Focus (Public)
 
-## 🤝 Integration Capabilities
+* Metadata consistency & tag hygiene
+* Schema version clarity & changelog discipline
+* Conversion script robustness & reproducibility
+* Reduction of unnecessary badges or claims
 
-### 🔌 API Integration
+## 🗺 Public Roadmap Signals
 
-#### RESTful APIs
+Near-term (public scope):
 
-```typescript
-// Device Management API
-interface DeviceAPI {
-  // List all devices
-  GET /api/v1/devices
+* Schema versioning enhancements & diff tooling
+* Automated metadata normalization checks (workflow)
+* Document conversion template improvements
 
-  // Create new device
-  POST /api/v1/devices
+## 📄 Licensing
 
-  // Update device configuration
-  PUT /api/v1/devices/{id}/config
+* This repository: MIT License (see LICENSE)
+* Each public repo should include a license file (MIT unless stated otherwise)
+* External forks retain original upstream licenses
 
-  // Get device telemetry
-  GET /api/v1/devices/{id}/telemetry
-}
-```
+## 💬 Communication
 
-#### WebSocket Streams
+* Use GitHub Issues and Discussions (where enabled)
+* Security concerns: follow SECURITY.md disclosure instructions
+* No off-platform support channels listed
 
-```javascript
-// Real-time data streaming
-const ws = new WebSocket('wss://api.alteriom.com/stream');
+## ✅ Verification & Integrity
 
-ws.onmessage = (event) => {
-    const data = JSON.parse(event.data);
-    switch (data.type) {
-        case 'device_telemetry':
-            handleTelemetryUpdate(data);
-            break;
-        case 'device_alert':
-            handleDeviceAlert(data);
-            break;
-    }
-};
-```
+Public artifacts demonstrate:
 
-### 🔗 Enterprise Integrations
+* Schema validation & metadata tests
+* Documentation conversion examples
+* Clear separation of public vs internal scope
 
-#### ERP Systems
+## 🤝 How to Help
 
-- **SAP Integration**: Direct ERP connectivity
-- **Oracle Integration**: Seamless data exchange
-- **Microsoft Dynamics**: Business process integration
-- **Custom APIs**: Flexible integration framework
-
-#### Business Intelligence
-
-- **Tableau**: Native connector available
-- **Power BI**: Real-time dashboard integration
-- **Looker**: Custom data source
-- **Grafana**: Monitoring and alerting
+* Open issues proposing improvements to schema clarity or metadata hygiene
+* Contribute conversion script edge cases & test fixtures
+* Suggest badge reductions or clarity improvements
+* Add missing LICENSE or README files in public repos
 
 ---
+If you spot inaccurate public information, open an issue titled "Public README Accuracy" with a verifiable source.
 
-## 📚 Documentation & Support
-
-### 📖 Documentation Resources
-
-- **[API Documentation](https://docs.alteriom.com/api)**: Complete API reference
-- **[Developer Guide](https://docs.alteriom.com/dev)**: Integration tutorials
-- **[Admin Manual](https://docs.alteriom.com/admin)**: Platform administration
-- **[Best Practices](https://docs.alteriom.com/best-practices)**: Implementation guidance
-
-### 🎓 Training & Certification
-
-- **Alteriom Certified Developer**: 40-hour certification program
-- **Platform Administrator**: 20-hour admin certification
-- **Solution Architect**: Advanced 60-hour program
-- **Custom Training**: On-site enterprise training
-
-### 🛠️ Support Options
-
-- **Community Support**: GitHub discussions and forums
-- **Professional Support**: 8/5 business hours support
-- **Enterprise Support**: 24/7 dedicated support team
-- **Premium Support**: Named support engineer
+_This README lists only publicly observable assets._
 
 ---
+Maintainer resources: see `docs/README.md` for badge guidelines, update cadence, and workflow plans.
 
-## 🌍 Global Presence
-
-### 🏢 Regional Data Centers
-
-- **North America**: US East, US West, Canada
-- **Europe**: UK, Germany, Netherlands, Ireland
-- **Asia Pacific**: Singapore, Japan, Australia, India
-- **Compliance**: Data residency and sovereignty
-
-### 🌐 Localization
-
-- **Languages**: 15+ languages supported
-- **Time Zones**: Global time zone support
-- **Currencies**: Multi-currency billing
-- **Regulations**: Local compliance adherence
-
----
-
-## 🎯 Roadmap & Future
-
-### 🔮 Q4 2025
-
-- **Edge Computing**: Enhanced edge analytics
-- **5G Integration**: Native 5G device support
-- **Blockchain**: Device identity on blockchain
-- **AR/VR**: Immersive monitoring interfaces
-
-### 🚀 2026 Vision
-
-- **Quantum Security**: Post-quantum cryptography
-- **Digital Twins**: Complete digital twin platform
-- **Autonomous Operations**: Self-healing infrastructure
-- **Sustainability**: Carbon footprint optimization
-
----
-
-## 🤝 Partnership & Ecosystem
-
-### 🏭 Technology Partners
-
-- **AWS**: Premier Technology Partner
-- **Microsoft Azure**: Gold Partner
-- **Google Cloud**: Technology Partner
-- **Intel**: IoT Solutions Alliance
-
-### 🔧 Hardware Partners
-
-- **Raspberry Pi**: Certified compatibility
-- **Arduino**: Native firmware support
-- **ESP32**: Optimized implementations
-- **Custom Hardware**: OEM partnerships
-
----
-
-## 📞 Contact & Sales
-
-### 💼 Enterprise Sales
-
-- **Email**: <enterprise@alteriom.com>
-- **Phone**: +1 (555) 123-ALTO
-- **Sales Portal**: [sales.alteriom.com](https://sales.alteriom.com)
-
-### 🔧 Technical Support
-
-- **Support Portal**: [support.alteriom.com](https://support.alteriom.com)
-- **Emergency**: +1 (555) 911-ALTO
-- **Status Page**: [status.alteriom.com](https://status.alteriom.com)
-
-### 🌐 Global Offices
-
-- **Headquarters**: San Francisco, CA, USA
-- **R&D Center**: Berlin, Germany
-- **APAC Office**: Singapore
-- **Support Center**: Dublin, Ireland
-
----
-
-## 📜 Legal & Compliance
-
-### 🔒 Security Certifications
-
-- **SOC 2 Type II**: Annual compliance audit
-- **ISO 27001**: Information security management
-- **PCI DSS**: Payment card industry compliance
-- **HIPAA**: Healthcare data protection
-
-### ⚖️ Legal & Privacy
-
-- **Privacy Policy**: GDPR and CCPA compliant
-- **Terms of Service**: Enterprise-grade SLA
-- **Data Processing**: DPA available
-- **Security**: Responsible disclosure program
-
----
-
-<div align="center">
-
-## 🌟 Ready to Transform Your IoT Operations?
-
-**[Start Your Free Trial](https://alteriom.com/trial)** | **[Schedule a Demo](https://alteriom.com/demo)** | **[Contact Sales](https://alteriom.com/contact)**
-
----
-
-**© 2025 Alteriom Technologies Inc. All rights reserved.**
-
-_Alteriom is a trademark of Alteriom Technologies Inc. Other product and company names mentioned herein may be trademarks of their respective owners._
-
-</div>
+Baseline documents: [`LICENSE`](../LICENSE) | [`CODE_OF_CONDUCT.md`](../CODE_OF_CONDUCT.md) | [`CONTRIBUTING.md`](../CONTRIBUTING.md) | [`SECURITY.md`](../SECURITY.md)
