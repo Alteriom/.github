@@ -2,29 +2,22 @@
 
 > Baseline public information for Alteriom. This file intentionally excludes any private or internal repositories, tools, or unpublished metrics.
 
-<!-- Core Public Repository Badges -->
-![mqtt-schema license](https://img.shields.io/github/license/Alteriom/alteriom-mqtt-schema)
-![mqtt-schema issues](https://img.shields.io/github/issues/Alteriom/alteriom-mqtt-schema)
-![mqtt-schema last commit](https://img.shields.io/github/last-commit/Alteriom/alteriom-mqtt-schema)
-![mqtt-schema top language](https://img.shields.io/github/languages/top/Alteriom/alteriom-mqtt-schema)
+## 🔖 Repository Badges
 
-![metadata-manager license](https://img.shields.io/github/license/Alteriom/repository-metadata-manager)
-![metadata-manager issues](https://img.shields.io/github/issues/Alteriom/repository-metadata-manager)
-![metadata-manager last commit](https://img.shields.io/github/last-commit/Alteriom/repository-metadata-manager)
-![metadata-manager top language](https://img.shields.io/github/languages/top/Alteriom/repository-metadata-manager)
+| Repository | License | Issues | Last Commit | Top Language | Size/Other |
+|------------|---------|--------|-------------|--------------|------------|
+| `alteriom-mqtt-schema` | ![license](https://img.shields.io/github/license/Alteriom/alteriom-mqtt-schema) | ![issues](https://img.shields.io/github/issues/Alteriom/alteriom-mqtt-schema) | ![last commit](https://img.shields.io/github/last-commit/Alteriom/alteriom-mqtt-schema) | ![lang](https://img.shields.io/github/languages/top/Alteriom/alteriom-mqtt-schema) | — |
+| `repository-metadata-manager` | ![license](https://img.shields.io/github/license/Alteriom/repository-metadata-manager) | ![issues](https://img.shields.io/github/issues/Alteriom/repository-metadata-manager) | ![last commit](https://img.shields.io/github/last-commit/Alteriom/repository-metadata-manager) | ![lang](https://img.shields.io/github/languages/top/Alteriom/repository-metadata-manager) | — |
+| `alteriom-docker-images` | ![license](https://img.shields.io/github/license/Alteriom/alteriom-docker-images) | ![issues](https://img.shields.io/github/issues/Alteriom/alteriom-docker-images) | ![last commit](https://img.shields.io/github/last-commit/Alteriom/alteriom-docker-images) | ![lang](https://img.shields.io/github/languages/top/Alteriom/alteriom-docker-images) | — |
+| `.github` (org config) | — | — | ![last commit](https://img.shields.io/github/last-commit/Alteriom/.github) | — | ![size](https://img.shields.io/github/repo-size/Alteriom/.github) |
 
-![docker-images license](https://img.shields.io/github/license/Alteriom/alteriom-docker-images)
-![docker-images issues](https://img.shields.io/github/issues/Alteriom/alteriom-docker-images)
-![docker-images last commit](https://img.shields.io/github/last-commit/Alteriom/alteriom-docker-images)
-![docker-images top language](https://img.shields.io/github/languages/top/Alteriom/alteriom-docker-images)
+## 🌐 External / Fork References
 
-![org-config last commit](https://img.shields.io/github/last-commit/Alteriom/.github)
-![org-config repo size](https://img.shields.io/github/repo-size/Alteriom/.github)
-
-<!-- Fork / External references (read-only) -->
-![painlessMesh fork](https://img.shields.io/badge/fork-painlessMesh-blue)
-![library-registry external](https://img.shields.io/badge/external-library--registry-lightgrey)
-![EByte LoRa library external](https://img.shields.io/badge/external-EByte_LoRa_E220-orange)
+| Repository | Type | Notes |
+|------------|------|-------|
+| `painlessMesh` | Fork | ![fork badge](https://img.shields.io/badge/fork-painlessMesh-blue) Release 1.5.6 reference |
+| `library-registry` | Upstream | ![external badge](https://img.shields.io/badge/external-library--registry-lightgrey) Read-only Arduino library index |
+| `EByte_LoRa_E220_Series_Library` | Upstream | ![external badge](https://img.shields.io/badge/external-EByte_LoRa_E220-orange) LoRa E220 LLCC68 examples |
 
 ## 📌 Mission (Public Scope)
 
@@ -42,13 +35,13 @@ Only repositories that are publicly accessible are listed. Forks and upstream th
 
 | Repository | Type | Focus | Key Capabilities |
 |-----------|------|-------|------------------|
-| `alteriom-mqtt-schema` | Alteriom (public) | MQTT schemas & TS types | Versioned MQTT topic schemas, TypeScript validation helpers, integration utilities |
-| `repository-metadata-manager` | Alteriom (public) | Repo compliance & health | Topic/tag management, metadata normalization, automation hooks |
-| `alteriom-docker-images` | Alteriom (public) | Documentation conversion tooling | Word→Markdown conversion, metadata management, validation scripts |
-| `.github` | Alteriom (public) | Org-wide GitHub configuration | Profile README, shared issue templates, shared guidelines |
-| `painlessMesh` | Third-party fork | Mesh networking library | Reference fork of release 1.5.6 (no Alteriom modifications) |
-| `library-registry` | External upstream | Arduino Library Manager registry | Read-only upstream registry reference |
-| `EByte_LoRa_E220_Series_Library` | External upstream | LoRa device library | Multi-platform LoRa E220 LLCC68 reference implementation |
+| `alteriom-mqtt-schema` | Alteriom (public) | MQTT schemas & TS types | Versioned topic/payload definitions, TS type exports, validation helpers |
+| `repository-metadata-manager` | Alteriom (public) | Repo compliance & health | Topic/tag normalization, description alignment, automated metadata checks |
+| `alteriom-docker-images` | Alteriom (public) | Docs conversion tooling | Pandoc-driven Word→Markdown conversion, front-matter enrichment scripts |
+| `.github` | Alteriom (public) | Org configuration | Profile README, issue templates, contribution & security policies |
+| `painlessMesh` | Third-party fork | Mesh networking library | ESP/Arduino mesh reference (1.5.6 fork, no local code changes) |
+| `library-registry` | External upstream | Arduino library index | Upstream registry data for library discovery (read-only) |
+| `EByte_LoRa_E220_Series_Library` | External upstream | LoRa device library | E220 LLCC68 multi-platform examples (Arduino / ESP / STM32) |
 
 Internal repositories are intentionally not referenced.
 
