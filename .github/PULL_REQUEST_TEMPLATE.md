@@ -1,33 +1,24 @@
-## Description
-Please provide a brief description of the changes in this PR.
+## What does this change?
 
-## Type of Change
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation update
-- [ ] Code refactoring
-- [ ] Performance improvement
-- [ ] Test addition/update
+<!-- A short description of the change and why it's needed. -->
 
-## How Has This Been Tested?
-Describe the tests you ran and how to reproduce them.
+Closes #
+
+## Type of change
+
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change (existing behaviour, API or wire format changes)
+- [ ] Documentation
+- [ ] Refactoring, build or CI
+
+## How was it tested?
+
+<!-- Commands you ran, and for firmware the boards and framework versions you tested on. -->
 
 ## Checklist
-- [ ] My code follows the project's code style
-- [ ] I have performed a self-review of my code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published
 
-## Related Issues
-Closes #(issue number)
-
-## Screenshots (if applicable)
-Add screenshots to help explain your changes.
-
-## Additional Notes
-Any additional information that reviewers should know.
+- [ ] I've read the [contributing guide](https://github.com/Alteriom/.github/blob/main/CONTRIBUTING.md).
+- [ ] Tests are added or updated where the repository has them, and they pass.
+- [ ] Documentation and the changelog are updated if the behaviour changed.
+- [ ] The pull request contains no secrets, credentials or internal hostnames.

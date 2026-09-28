@@ -1,97 +1,73 @@
-# .github Documentation Hub
+# Maintainer guide
 
-This directory provides organization-wide guidance for shared GitHub resources (profile README, issue templates, workflows, automation scripts, and badge usage). It intentionally excludes unverifiable marketing claims.
+How to keep the organization profile and the default community health files accurate.
 
-## Purpose
+## The one rule
 
-* Centralize maintenance notes for the public `.github` repository.
-* Explain structure and conventions used in profile and automation.
-* Provide contributors with clear expectations for updates.
+**This repository is public.** Only public repositories, published packages and public URLs belong
+here. Internal repository names, hostnames, IP addresses, agent names and infrastructure details
+belong in the members-only `.github-private` repository.
 
-## Directory Structure
+## Updating the profile
 
-```text
-.github/
-  profile/        # Organization public profile README
-  docs/           # This documentation hub
-  workflows/      # (Add shared GitHub Actions here if/when needed)
-  ISSUE_TEMPLATE/ # (Add or refine templates; keep concise & actionable)
+[`profile/README.md`](../profile/README.md) groups projects into four areas:
+
+| Section | Projects |
+|---|---|
+| Mesh networking & device libraries | painlessMesh, LoRa E220 library, painlessMesh-simulator |
+| Telemetry & integration | mqtt-schema, webhook-client (TypeScript and Python) |
+| Hardware-in-the-loop testing | esp32-rig, esp32-hil-firmware, esp32-rig-example |
+| Build & developer tooling | docker-images, repository-metadata-manager, ai-dev-skills |
+
+Update it when:
+
+- a repository is made public, archived, renamed or deleted;
+- a project changes its package name, registry or documentation URL;
+- a project's one-line description no longer matches what it does.
+
+Version badges come from shields.io and update themselves, so a new release doesn't need a profile
+change.
+
+To list the current public repositories:
+
+```bash
+gh repo list Alteriom --visibility public --no-archived --json name,description --limit 100
 ```
 
-## Profile README Maintenance
+### Writing style
 
-| Aspect | Guideline |
-|--------|-----------|
-| Public repos table | Only include repositories actually public; update quarterly |
-| Badges | Use shields.io factual badges (license, issues, last commit); avoid vanity metrics |
-| Internal references | Clearly mark excluded internal repos; do not leak private paths |
-| Custom badges | Only add if value is generated in a public artifact (e.g., docs audit JSON) |
-| Roadmap | Use observed public analysis documents; avoid speculative feature lists |
+- One or two sentences per project: what it does and who it's for.
+- Only claim what a visitor can verify from the repository itself.
+- Link to the package registry or docs site where one exists.
+- Use badges only for version and release; they must be generated from public data.
 
-### Adding/Removing Repositories
+## Before making a repository public
 
-1. Confirm repository visibility (public vs internal).
-2. If making public, ensure: LICENSE, README, basic issue template, code of conduct.
-3. Update the profile table with concise focus & capabilities (max ~120 chars in capabilities cell).
-4. Run markdown lint after edits.
+- [ ] `LICENSE` file present
+- [ ] README explains what the project is, how to install it and how to use it
+- [ ] Repository description and topics set (`gh repo edit --description ... --add-topic ...`)
+- [ ] No secrets, internal hostnames or IP addresses in the code **or in the git history**
+- [ ] Private vulnerability reporting enabled (Settings → Code security)
+- [ ] Added to `profile/README.md`
 
-## Badges Usage
+## Default community health files
 
-Prefer minimal, factual badges: license, issues, last commit, top language, repo size (for config). Avoid chain rows of >12 badges.
+GitHub uses `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `SUPPORT.md`, the issue forms
+and the pull request template from this repository for any public repository that doesn't have its
+own. Keep them generic: they must make sense for a C++ firmware library and for a TypeScript SDK
+alike.
 
-Example syntax:
+The security and code-of-conduct contact is **admin@alteriom.ca**, the organization's public email.
+If it changes, update `SECURITY.md` and `CODE_OF_CONDUCT.md` together.
 
-```markdown
-![repo license](https://img.shields.io/github/license/Alteriom/repository-metadata-manager)
-```
+## Review cadence
 
-Custom badge placeholders should be rendered from scripts rather than hard-coded where possible.
-
-## Automation (Planned / Optional)
-
-If adding shared workflows:
-
-* Use re-usable workflow calls from internal repos only after sanitizing secrets.
-* Name workflows `org-docs-audit.yml`, `org-link-check.yml`, etc.
-* Keep workflow concurrency limited to avoid rate limiting.
-
-## Documentation Quality Scoring (Future)
-
-Potential automated badge: `Docs Quality` produced by a script that aggregates coverage (examples, troubleshooting, specs alignment). Must output a JSON file with fields:
-
-```json
-{
-  "coverage_examples": 0.72,
-  "coverage_troubleshooting": 0.55,
-  "structure_score": 0.81,
-  "overall": 0.69
-}
-```
-
-A script can convert `overall` to a shield via a dynamic endpoint or a manually updated badge.
-
-## Contributor Expectations
-
-* Keep changes small and reviewable.
-* Explain rationale for adding any new badge or section.
-* Avoid duplication of internal repository documentation.
-* Reference issue numbers when removing or updating sections.
-
-## Update Cadence
-
-| Task | Frequency | Owner | Notes |
-|------|-----------|-------|-------|
-| Public repo snapshot refresh | Quarterly | Maintainer | Validate visibility before listing |
-| Badge accuracy audit | Monthly | Maintainer | Ensure no broken badge endpoints |
-| README lint & link check | Monthly | Maintainer | Add link checker workflow when available |
-| Docs quality score (if implemented) | Monthly | Script/Workflow | Auto-update badge |
-
-## Future Improvements
-
-* Add link-check GitHub Action.
-* Automate generation of the public repository table.
-* Introduce dynamic badge for docs quality.
-* Provide translation guidelines if localization begins.
+| Task | When |
+|---|---|
+| Check the profile against the list of public repositories | Every quarter, and whenever visibility changes |
+| Check links and badges in the profile | Every quarter |
+| Review default health files | Once a year |
 
 ---
-**Last updated:** 2025-10-23
+
+**Last updated:** 2026-09-28
