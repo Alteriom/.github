@@ -1,53 +1,58 @@
-# Security Policy
+# Security policy
 
-## Supported Scope
+This policy applies to every public Alteriom repository that doesn't have its own `SECURITY.md`.
 
-This policy applies only to the public repositories listed in `profile/README.md`.
-Private or internal systems are out of scope for public disclosure.
+## Reporting a vulnerability
 
-## Reporting a Vulnerability
+**Please don't report security vulnerabilities through public issues, discussions or pull
+requests.**
 
-1. Do NOT open a public issue for undisclosed vulnerabilities.
-2. Email: `security@alteriom.example` (placeholder; replace with operational address when available).
-3. Provide: repository name, affected files, impact overview, reproduction steps.
-4. Allow at least 14 days for triage and initial response.
+Report them privately through GitHub instead:
 
-## Vulnerability Classes in Scope
+1. Go to the affected repository's **Security** tab.
+2. Click **Report a vulnerability**.
+3. Fill in the advisory form.
 
-* Schema validation bypass (e.g., incorrect TypeScript definitions allowing unsafe payloads)
-* Documentation conversion script injection (malicious input producing unsafe output)
-* Metadata normalization producing unintended privilege escalation (if automation expands in scope)
+Private vulnerability reporting is enabled on all our public repositories. If you can't use it,
+email **admin@alteriom.ca** with "Security" in the subject line.
 
-## Out of Scope
+Please include as much of the following as you can:
 
-* Cosmetic issues (typos, formatting)
-* Vulnerabilities requiring access to private repositories
-* Social engineering attacks
+- The affected repository, and the version, release or commit
+- The type of issue (for example buffer overflow, authentication bypass, injection)
+- The hardware and framework versions, for firmware issues
+- Step-by-step instructions to reproduce the issue
+- Proof-of-concept code, if you have it
+- The impact, and how an attacker might exploit it
 
-## Remediation Process
+## What to expect
 
-1. Triage & confirm.
-2. Assign severity (Low / Moderate / High).
-3. Develop fix and tests.
-4. Publish advisory and patch simultaneously.
-5. Credit reporter unless anonymity requested.
+| Step | Target |
+|---|---|
+| Acknowledge your report | Within 5 business days |
+| Initial assessment | Within 10 business days |
+| Fix or mitigation | Depends on severity and complexity; we'll keep you updated |
+| Public disclosure | Coordinated with you, once a fix is available |
 
-## Disclosure Timeline (Target)
+We'll credit you in the published advisory unless you'd rather stay anonymous.
 
-| Step | Target Time |
-|------|-------------|
-| Acknowledge report | 5 business days |
-| Initial triage     | 10 business days |
-| Fix development    | 30 calendar days (depends on severity) |
-| Advisory publish   | With patch release |
+## Supported versions
 
-## GPG / Encryption
+Security fixes are made against the latest release of each project. Please check that you can
+reproduce the issue on the latest release before reporting it.
 
-(Encryption key to be published here once available.)
+## Scope
 
-## Versioning & Tags
+In scope: the code and published packages from public Alteriom repositories.
 
-Security fixes should increment patch version and reference CVE or internal advisory ID.
+Out of scope:
 
----
-**Last updated:** 2025-10-23
+- Vulnerabilities in third-party dependencies that are already publicly known (please report those
+  upstream)
+- Issues that require physical access to a device, unless the project claims to protect against it
+- Denial of service by flooding a radio or network you control
+- Social engineering
+
+Some projects document known security limitations in their own `SECURITY.md`. painlessMesh, for
+example, describes the limits of its security model. Please check the repository's documentation
+before reporting.

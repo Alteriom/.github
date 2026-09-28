@@ -1,64 +1,62 @@
-# Contributing Guide
+# Contributing to Alteriom projects
 
-Thank you for your interest in contributing to Alteriom's public repositories.
+Thanks for taking the time to contribute. This guide applies to every public Alteriom repository
+that doesn't have its own `CONTRIBUTING.md`. If the repository you're working in has one, follow
+that instead.
 
-## Public Scope
+## Ways to contribute
 
-Only contribute to repositories explicitly listed in the public table inside `profile/README.md`.
-Do not reference or attempt to access private/internal repositories or unpublished tooling.
+- **Report a bug.** Open an issue with the steps to reproduce it, what you expected and what
+  happened. For firmware, include the board, core version and serial output.
+- **Suggest an improvement.** Open an issue describing the problem you're trying to solve before
+  proposing a solution.
+- **Improve the documentation.** Fixes to READMEs, examples and guides are always welcome.
+- **Submit code.** Bug fixes and features, with tests where the repository has them.
 
-## Ground Rules
+Security vulnerabilities are the exception: please **don't** open a public issue. Follow the
+[security policy](SECURITY.md) instead.
 
-* Keep changes atomic and focused.
-* Use clear commit messages (imperative tone, e.g., "Add schema diff helper").
-* Add or update tests when altering schema, metadata normalization, or conversion scripts.
-* Maintain existing file naming conventions (kebab-case for Markdown, lowercase directories).
-* Avoid adding performance claims or metrics not publicly verifiable.
+## Before you start
 
-## Pull Request Checklist
+1. Search the existing issues and pull requests; someone may already be on it.
+2. For anything larger than a small fix, open an issue first so we can agree on the approach before
+   you invest the time.
+3. Read the repository's README. Most repositories document how to build and test them there.
 
-Before submitting:
+## Making a change
 
-* [ ] Linked related issue (or created one if none existed)
-* [ ] Added tests / updated existing tests
-* [ ] Updated documentation (if applicable)
-* [ ] Ensured LICENSE headers or file are present if new repo/file type added
-* [ ] Ran markdown lint (`markdownlint`) locally (optional but encouraged)
+1. Fork the repository and create a branch from `main`.
+2. Keep the change focused: one fix or feature per pull request.
+3. Add or update tests for the behaviour you changed.
+4. Update the documentation and the changelog if the repository keeps one.
+5. Make sure the build and tests pass locally.
+6. Open a pull request and fill in the template.
 
-## Schema Changes (`alteriom-mqtt-schema`)
+### Commit messages
 
-1. Increment version where appropriate.
-2. Provide a changelog entry (new section or update existing).
-3. Include validation test for new/changed fields.
-4. Ensure backward compatibility notes if breaking change.
+Write commit messages in the imperative mood and explain *why* as well as *what*. Many of our
+repositories use [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`,
+`docs:` and so on) to generate release notes; follow the style you see in the repository's history.
 
-## Metadata Normalization (`repository-metadata-manager`)
+### Firmware and embedded changes
 
-* Keep topic additions minimal and relevant.
-* Document rationale for bulk metadata changes in PR description.
-* Run build/test suite to confirm no regressions.
+- Say which boards and framework versions you tested on (for example *ESP32-S3, Arduino core
+  3.0.x*).
+- Keep memory and flash usage in mind on ESP8266 and small ESP32 variants.
+- Don't break the public API or wire format without discussing it first. Other projects depend on
+  both.
 
-## Documentation Conversion (`alteriom-docker-images`)
+## Review
 
-* Provide example input and output in PR body for new conversion rule changes.
-* Preserve original semantic meaning while normalizing formatting.
-* Avoid embedding internal file paths.
+A maintainer will review your pull request, usually within a week. We may ask for changes; that's a
+normal part of the process. Once CI passes and the review is approved, a maintainer merges it.
 
-## Security & Disclosure
+## Licensing
 
-* Do not post vulnerabilities publicly before coordinating via SECURITY.md process.
-* Clearly mark security-related PRs with the `security` label.
+By contributing, you agree that your contribution is licensed under the license of the repository
+you're contributing to (see its `LICENSE` file).
 
-## Review Expectations
+## Code of conduct
 
-Maintainers aim to review within 5 business days. Larger or complex changes may take longer.
-Use draft PRs for early feedback.
-
-## Communication
-
-* Use Issues for feature requests or bug reports.
-* Discussions (if enabled) for broader design questions.
-* Keep tone constructive and respectful (see CODE_OF_CONDUCT.md).
-
----
-**Last updated:** 2025-10-23
+Everyone taking part in Alteriom projects is expected to follow our
+[code of conduct](CODE_OF_CONDUCT.md).
